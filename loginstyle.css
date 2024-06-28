@@ -1,0 +1,197 @@
+*{
+    margin:0;
+    padding: 0; 
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+#bar {
+  background: linear-gradient(to right, #ff105f,#ffad06); 
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+p{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+.h1text{
+    margin-left:350px;
+    color:#d21d0c;
+    margin-top:40px;
+    font-size: 70px;
+    font-weight: bold;
+}
+span{
+    font-size: 12px;
+    bottom: 50px;
+    margin-left: 7px;
+    color:black; 
+}
+ body{
+     background-size: cover;
+      width: 100%;
+      height:100%;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(img/house.webp);
+      background-position: center;
+      position: relative; 
+  }
+
+.headerlogin {
+    color: orange;
+    text-align: center;
+    padding: 1em;
+}
+.formbox{
+    width: 380px;
+    height: 600px;
+    position:relative;
+    margin: 2% auto;
+    background: whitesmoke;
+    padding: 5px;
+    overflow: hidden;
+   border-radius: 20px;
+}
+.buttonbox{
+    width: 220px; 
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px lightblue;
+    border-radius: 30px;
+}
+.toggle-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#btn{
+    top:0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #ff105f,#ffad06);
+    border-radius: 30px;
+    transition: .5s;
+}
+.input{
+    top: 100px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.input-field{
+     font-size: 15px;
+    width: 100%;
+    padding:10px 0;
+    margin: 5px 0;
+    border-left: 0; 
+    border-top: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #999;
+    outline: none ;
+    background: transparent;
+}
+.submit-btn{
+    width: 80%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin-top: 10px;
+    margin-left: 25px;
+    background: linear-gradient(to right,#ff105f,#ffad06);
+    border-radius: 30px;
+    border: 0;
+    box-shadow: 0 0 8px 9px lightblue;
+    outline: none;
+}
+
+.check-box{
+  margin: 30px 10px 10px 0; 
+ 
+}
+
+#login{
+left: 50px;
+}
+#register{
+    left: 450px;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(img/house.webp);
+    background-position: center;
+    position: relative;
+  }
+
+  #bar {
+    padding: 10px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  .h1text {
+    margin-left: 0;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+
+  .headerlogin {
+    padding: 0.5em;
+  }
+
+  .formbox {
+    width: 100%;
+    height: auto;
+    margin: 2% 0;
+  }
+
+  .buttonbox {
+    width: 80%;
+    margin: 15px auto;
+  }
+
+  .toggle-btn {
+    padding: 10px 15px;
+  }
+
+  #btn {
+    width: 60px;
+  }
+
+  .input {
+    top: 20px;
+  }
+
+  .input-field {
+    font-size: 12px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 0;
+  }
+
+  .check-box {
+    margin: 15px 10px 10px 0;
+  }
+
+  #login {
+    left: 10px;
+  }
+
+  #register {
+    left: 250px;
+  }
+}
+

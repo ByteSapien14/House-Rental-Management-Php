@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="loginstyle.css">
+<meta charset="UTF-8">
+<meta name ="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=yes">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="text/javascript">
+function preventBack(){
+    window.history.forward();
+}
+setTimeout("preventBack()", 0);
+window.onunload = function(){null};  
+</script>
+
+</head>
+<body>
+<nav id = "bar"><p>Rent A Space</p></nav>
+<h1 class="h1text">Let us<br>Guide you Home</h1>
+<div class="main">
+<div class = "bodylogin">
+<div class ="formbox">   
+<div class = "buttonbox"> 
+    <div id ="btn"> </div>
+    <button type ="button" class = "toggle-btn" onclick="login()"> Log In</button>
+     <button type ="button" class = "toggle-btn" onclick="register()"> Register</button>
+</div>
+
+<form class ="input" id = "login" action = "signin.php" method="GET">
+    <input type="email" class = "input-field" name="username" placeholder="Email">
+    <input type="text" class = "input-field" name="password" placeholder="Enter Password">
+    <select name="role" class="input-field" required>
+        <option value="tenant">Tenant</option>
+        <option value="owner">Owner</option>
+    </select>
+    <input type="checkbox" class = "check-box"><span>Remember Password</span>
+    <button type ="submit" class = "submit-btn" name="loginrent" >Log in</button>
+</form>
+<form class="input" id="register" action="registration.php" method="POST" enctype="multipart/form-data">
+    <input type="text" class="input-field" name="username" placeholder="Username" required>
+    <input type="text" class="input-field" name="email" placeholder="Enter Email" required>
+    <input type="text" class="input-field" name="password" placeholder="Enter Password" required>
+    <input type="tel" class="input-field" name="contact" placeholder="Enter Contact" required>
+    <input type="text" class="input-field" name="occupation" placeholder="Enter Occupation" required>
+    <input type="text" class="input-field" name="address" placeholder="Enter Address" required>
+    
+    <!-- Profile Picture -->
+    <label for="profile-picture" class="input-field" id="profile-picture-label" style="display: none;">Profile Picture</label>
+    <input type="file" id="profile-picture" name="profile_picture" accept="image/*" style="display: none;">
+
+    <select name="role" class="input-field" id="role" required onchange="toggleProfilePicture()">
+        <option value="tenant">Tenant</option>
+        <option value="owner">Owner</option>
+    </select>
+
+    <input type="checkbox" class="check-box" required><span>I agree to terms and conditions</span>
+    <button type="submit" name="register" class="submit-btn">Register</button>
+
+    <script>
+        function toggleProfilePicture() {
+            var roleSelect = document.getElementById("role");
+            var profilePictureLabel = document.getElementById("profile-picture-label");
+            var profilePictureInput = document.getElementById("profile-picture");
+
+      
+            if (roleSelect.value === "owner") {
+                profilePictureLabel.style.display = "block";
+                profilePictureInput.style.display = "block";
+            } else {
+                profilePictureLabel.style.display = "none";
+                profilePictureInput.style.display = "none";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var form = document.getElementById("register");
+            form.addEventListener("submit", function (event) {
+             
+                var username = form.elements["username"].value;
+                if (username.length < 3) {
+                    alert("Username must be at least 3 characters long");
+                    event.preventDefault();
+                    return false;
+                }
+
+                var email = form.elements["email"].value;
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert("Invalid email address");
+                    event.preventDefault();
+                    return false;
+                }
+
+                var password = form.elements["password"].value;
+                if (password.length < 8) {
+                    alert("Password must be at least 8 characters long");
+                    event.preventDefault();
+                    return false;
+                }
+
+                var contact = form.elements["contact"].value;
+                var contactRegex = /^\d{10}$/;
+                if (!contactRegex.test(contact)) {
+                    alert("Invalid contact number");
+                    event.preventDefault();
+                    return false;
+                }
+
+                var role = form.elements["role"].value;
+                if (role === "owner") {
+                    var profilePicture = form.elements["profile_picture"].value;
+                    if (!profilePicture) {
+                        alert("Please upload a profile picture");
+                        event.preventDefault();
+                        return false;
+                    }
+                }
+
+                return true;
+            });
+        });
+    </script>
+</form>
+</div>
+</div>
+	<script>
+    var x = document.getElementById("login");
+    var y = document.getElementById("register");
+    var z = document.getElementById("btn");
+
+    function register(){
+        x.style.left = "-400px"; 
+        y.style.left = "50px";
+        z.style.left = "110px";
+    }
+    function login(){
+        x.style.left = "50px";
+        y.style.left = "450px";
+        z.style.left = "0";
+    }
+
+</script>
+</div>
+</body>
+</html>
+
+
+
+       

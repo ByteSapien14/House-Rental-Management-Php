@@ -1,0 +1,13 @@
+Database: house_rental
+
+
+Owner's Login
+
+Email:	  tums@gmail.com
+Password: 1234
+
+
+Tenant Login
+
+Email: anyinechris@gmail.com
+Password: xact
